@@ -75,7 +75,7 @@ Content-Type | 正常情况下，该值将被设为`application/json`，表示�
 fsize | int | 文件尺寸，单位为字节。
 hash | string | 文件的[ETag]()信息。
 mimeType | string | 以MIME信息表达的文件类型。<p>关于各种MIME值的含义，请参见[MIME Media Types](http://www.iana.org/assignments/media-types)（内容由IANA维护）。
-putTime | int64 | 文件上传时的服务器端时间。
+putTime | int64 | 文件上传时的服务器端Epoch时间，单位为100纳秒。<p>例如13603956734587420对应大约2013年02月09日15:41:13。
 
 如果请求失败，请参见[常见错误码]()。
 
