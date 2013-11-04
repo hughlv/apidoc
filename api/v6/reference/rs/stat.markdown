@@ -12,7 +12,7 @@
 ### 请求语法
 
 ```
-POST /stat/<EncodedEntryURI> HTTP/1.1
+GET /stat/<EncodedEntryURI> HTTP/1.1
 Host: rs.qiniu.com
 Authorization: <AccessToken>
 ```
@@ -75,25 +75,33 @@ Content-Type | 正常情况下，该值将被设为`application/json`，表示�
 fsize | int | 文件尺寸，单位为字节。
 hash | string | 文件的[ETag]()信息。
 mimeType | string | 以MIME信息表达的文件类型。<p>关于各种MIME值的含义，请参见[MIME Media Types](http://www.iana.org/assignments/media-types)（内容由IANA维护）。
-putTime | int64 | 文件上传时的服务器端Epoch时间，单位为100纳秒。<p>例如13603956734587420对应大约2013年02月09日15:41:13。
+putTime | int64 | 文件上传时的服务器端Epoch时间戳，单位为100纳秒。<p>例如值为`13603956734587420`的时间对应实际时间为`2013年02月09日15:41:13`。
 
 如果请求失败，请参见[常见错误码]()。
 
 <a name="examples">
 ## 示例
 
-<a name="sample-request">
+<a name="example1-command">
+### 命令行示例
+
+```
+curl -H "Authorization: QBox QNJi_bYJlmO5LeY..." -i \
+"http://rs.qiniu.com/stat/ZGVtbzoyMDEzLTAyLTA5LTA3LTM5LTIwLmpwZw=="
+```
+
+<a name="example1-request">
 ### 请求示例
 
 ```
-HTTP/1.1
-POST /stat/ZGVtbzoyMDEzLTAyLTA5LTA3LTM5LTIwLmpwZw==
+GET /stat/ZGVtbzoyMDEzLTAyLTA5LTA3LTM5LTIwLmpwZw== HTTP/1.1
+User-Agent: curl/7.30.0
 Host: rs.qiniu.com
-Content-Type: application/x-www-form-urlencoded
+Accept: */*
 Authorization: QBox QNJi_bYJlmO5LeY08FfoNj9w_r72Vsn...(过长已省略)
 ```
 
-<a name="sample-response">
+<a name="example1-response">
 ### 响应示例
 
 以下响应中JSON字符串经过格式化，以方便查看。
