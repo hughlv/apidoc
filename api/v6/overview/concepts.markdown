@@ -1,4 +1,4 @@
-<a name="resource">
+<a name="resource"></a>
 ## 资源（resource）
 
 资源（resource）是七牛云存储服务中的逻辑存储单元。对于每一个账号，该账号里存放的每一个资源都有唯一的标识。
@@ -29,7 +29,7 @@ http://www.examples.com/features/index.html
 http://www.examples.com/features
 ```
 
-<a name="bucket">
+<a name="bucket"></a>
 ## 空间（bucket）
 
 空间是资源的管理单位。资源必然位于某一个空间中。每个空间可以对应一系列的设置，以对资源提供合理的管理动作。
@@ -40,7 +40,7 @@ http://www.examples.com/features
 - 绑定若干个域名，以便于使用自定义的域名来访问存储的资源；
 - 设置资源的处理样式（style），以便于用简短的方式
 
-<a name="domain-binding">
+<a name="domain-binding"></a>
 ## 域名绑定
 
 每个空间都可以绑定一个到多个自定义域名，以便于更方便的访问资源。
@@ -53,7 +53,7 @@ http://www.examples.com/features
 
 这样既可以在一定程度上隐藏正在使用七牛云存储的事实，但更大的好处是如果需要从一个云存储迁移到另一个云存储，只需要修改域名DNS的CNAME设置，而无需更新网页源代码。
 
-<a name="style">
+<a name="style"></a>
 ## 资源样式（style）
 
 样式是对一组设置的命名，假如我们定义了一个名为`small`的图片样式，用来将目标图片转换为特定尺寸，我们可以这样使用来获取符合期望的转换后图片：
