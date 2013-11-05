@@ -1,14 +1,14 @@
-<a name="stat">
+<a name="stat"></a>
 #获取资源信息（stat）
 
-<a name="description">
+<a name="description"></a>
 ## 描述
 获取资源的Metadata信息，但不会返回资源内容。
 
-<a name="request">
+<a name="request"></a>
 ## 请求
 
-<a name="request-syntax">
+<a name="request-syntax"></a>
 ### 请求语法
 
 ```
@@ -19,17 +19,17 @@ Authorization: <AccessToken>
 
 EncodedEntryURI的细节请查看[EncodedResourceURI格式]()。
 
-<a name="request-auth">
+<a name="request-auth"></a>
 ### 访问权限
 
 [AccessToken](http://docs.qiniu.com/api/v6/rs.html#digest-auth)方式。
 
-<a name="request-params">
+<a name="request-params"></a>
 ### 请求参数
 
 该请求不支持任何参数。
 
-<a name="request-headers">
+<a name="request-headers"></a>
 ### 头部信息
 
 该请求须指定以下头部信息。
@@ -40,15 +40,15 @@ Authorization | 该参数应严格按照[AccessToken]()格式进行填充，否�
 
 在使用本API时无需设置额外的头部信息。其他可用的请求头部信息请参见[常用请求头部信息]()。
 
-<a name="request-body">
+<a name="request-body"></a>
 ### 请求内容
 
 该请求无需指定请求内容。
 
-<a name="response">
+<a name="response"></a>
 ## 响应
 
-<a name="response-headers">
+<a name="response-headers"></a>
 ### 头部信息
 参数名称      | 说明                              
 :----------- | :------------------------------- 
@@ -56,7 +56,7 @@ Content-Type | 正常情况下，该值将被设为`application/json`，表示�
 
 关于其他可能出现的头部信息，请参见：[常用请求响应头部信息]()。
 
-<a name="response-body">
+<a name="response-body"></a>
 ### 响应内容
 
 如果请求成功，返回的响应内容将是一个JSON结构体。格式如下：
@@ -81,10 +81,10 @@ putTime | int64 | 文件上传时的服务器端Epoch时间戳，单位为100纳
 
 如果请求失败，请参见[常见错误码]()。
 
-<a name="examples">
+<a name="examples"></a>
 ## 示例
 
-<a name="example1-command">
+<a name="example1-command"></a>
 ### 命令行示例
 
 ```
@@ -92,7 +92,7 @@ curl -H "Authorization: QBox QNJi_bYJlmO5LeY..." -i \
 "http://rs.qiniu.com/stat/ZGVtbzoyMDEzLTAyLTA5LTA3LTM5LTIwLmpwZw=="
 ```
 
-<a name="example1-request">
+<a name="example1-request"></a>
 ### 请求示例
 
 ```
@@ -103,7 +103,7 @@ Accept: */*
 Authorization: QBox QNJi_bYJlmO5LeY08FfoNj9w_r72Vsn...(过长已省略)
 ```
 
-<a name="example1-response">
+<a name="example1-response"></a>
 ### 响应示例
 
 以下响应中JSON字符串经过格式化，以方便查看。
@@ -127,12 +127,12 @@ X-Reqid: swEAAMipp-5bIjMT
 }
 ```
 
-<a name="remarks">
+<a name="remarks"></a>
 ## 附注
 
 无。
 
-<a name="related-resources">
+<a name="related-resources"></a>
 ## 相关资源
 
 - [AccessToken格式](http://docs.qiniu.com/#)
