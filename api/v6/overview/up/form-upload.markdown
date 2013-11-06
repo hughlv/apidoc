@@ -10,8 +10,9 @@
 ```
 <form method="post" action="http://up.qiniu.com/"
  enctype="multipart/form-data">
-  <input name="key" type="hidden" value="<resource key>">
-  <input name="token" type="hidden" value="<token>">
+  <input name="key" type="hidden" value="<resource_key>">
+  <input name="x:<custom_name>" type="hidden" value="<custom_value>">
+  <input name="token" type="hidden" value="<upload_token>">
   <input name="file" type="file" />
 </form>
 ```
@@ -28,19 +29,27 @@ Content-Type: multipart/form-data; boundary=<Boundary>
 --<Boundary>
 
 Content-Disposition: form-data; name="key"
-<FileID>
+<resource_key>
+--<Boundary>
+
+Content-Disposition: form-data; name="x:<custom_field_name>"
+<custom_value>
 --<Boundary>
 
 Content-Disposition: form-data; name="token"
-<UploadToken>
+<upload_token>
 --<Boundary>
 
-Content-Disposition: form-data; name="file"; filename="<FileName>"
+Content-Disposition: form-data; name="file"; filename="[文件名]"
 Content-Type: <MimeType>
-<FileContent>
+[文件内容]
 --<Boundary>--
 ```
 
 在非网页开发的场景中，开发者完全可以自行组装这个HTML表单请求。考虑到各个平台上的网络库都已经对HTML文件上传表单有非常完整的支持，组装这个请求的过程将会非常轻松。
 
-另外，表单上传过程还可以指定一系列的参数，以控制服务器在文件上传完成后的后续动作。我们将在[上传后续动作]()中详细描述各种参数的用法和作用。
+我们可以在生成上传凭证时指定一系列的参数，以控制服务器在文件上传完成后的后续动作。我们将在[上传后续动作]()中详细描述各种参数的用法和作用。
+
+另外如果需要，我们可以在表单参数中增加一系列的[魔法变量]()和[自定义变量]()。上述表单例子中的`<x:custom_field_name>`就是变量的使用方法示意。我们可以将其更换为一系列魔法变量或自定义变量。
+
+变量将会在回调和自定义返回内容中起到极大的作用。具体用法请参见[回调]()和[自定义返回内容]()对应的使用方法描述。
