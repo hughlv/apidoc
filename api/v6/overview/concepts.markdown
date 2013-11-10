@@ -1,5 +1,8 @@
+<a name="concepts"></a>
+## 概念
+
 <a name="resource"></a>
-## 资源（resource）
+### 资源（resource）
 
 资源（resource）是七牛云存储服务中的逻辑存储单元。对于每一个账号，该账号里存放的每一个资源都有唯一的标识。
 
@@ -17,20 +20,20 @@
 /about.html
 ```
 
-假设这些资源都位于某个绑定了域名`examples.com`的公开空间中，则用户可以通过组合这样的URL访问这些资源：
+假设这些资源都位于某个绑定了域名`example.com`的公开空间中，则用户可以通过组合这样的URL访问这些资源：
 
 ```
-http://www.examples.com/features/index.html
+http://www.example.com/features/index.html
 ``` 
 
 或省略掉`index.html`，如下：
 
 ```
-http://www.examples.com/features
+http://www.example.com/features
 ```
 
 <a name="bucket"></a>
-## 空间（bucket）
+### 空间（bucket）
 
 空间是资源的管理单位。资源必然位于某一个空间中。每个空间可以对应一系列的设置，以对资源提供合理的管理动作。
 
@@ -41,7 +44,7 @@ http://www.examples.com/features
 - 设置资源的处理样式（style），以便于用简短的方式
 
 <a name="domain-binding"></a>
-## 域名绑定
+### 域名绑定
 
 每个空间都可以绑定一个到多个自定义域名，以便于更方便的访问资源。
 
@@ -53,10 +56,23 @@ http://www.examples.com/features
 
 这样既可以在一定程度上隐藏正在使用七牛云存储的事实，但更大的好处是如果需要从一个云存储迁移到另一个云存储，只需要修改域名DNS的CNAME设置，而无需更新网页源代码。
 
-<a name="style"></a>
-## 资源样式（style）
+<a name="fop"></a>
+### 数据处理（fop）
 
-样式是对一组设置的命名，假如我们定义了一个名为`small`的图片样式，用来将目标图片转换为特定尺寸，我们可以这样使用来获取符合期望的转换后图片：
+数据处理（fop）是七牛云存储提供的一种强大的数据处理机制。开发者可以在上传或访问资源时触发数据处理流程，从而得到资源进行按需变换后的结果。
+
+数据处理的执行非常简单，就是在资源请求中加上数据处理动作和参数，比如以下的URL对图片进行缩放，就是调用了一个名为`imageView`的数据处理操作：
+
+```
+http://qiniuphotos.qiniudn.com/gogopher.jpg?imageView/2/w/200/h/200
+```
+
+多个数据处理操作可以通过管道（pipe）进行连接，比如我们可以在一次请求中完成先对图片进行缩放，然后再在图片右下角添加一个透明图片水印。缩放和添加水印分别是一个数据处理操作。
+
+<a name="style"></a>
+### 资源样式（style）
+
+样式是对一个或一组数据处理操作的命名，假如我们定义了一个名为`small`的图片样式，用来将目标图片转换为特定尺寸，我们可以这样使用来获取符合期望的转换后图片：
 
 ```
 http://i1.qiniu.com/sample1.png-small
