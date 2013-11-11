@@ -17,7 +17,7 @@ Host: rs.qiniu.com
 Authorization: <AccessToken>
 ```
 
-EncodedEntryURI的细节请查看[EncodedResourceURI格式]()。
+EncodedEntryURI的细节请查看[EncodedEntryURI格式]()。
 
 <a name="request-auth"></a>
 ### 访问权限
