@@ -6,7 +6,7 @@
 <a name="streaming-model"></a>
 ### 流媒体基本机制
 
-HTTP Live Streaming（以下简称为HLS）是基于HTTP的流媒体传输协议。它将一整个音视频流切割成一个个小的音视频文件，并生成一个播放列表（m3u8）。客户端只需要获取资源的播放列表即可以流的方式播放音视频。
+[HTTP Live Streaming](https://developer.apple.com/streaming/)（以下简称为HLS）是基于HTTP的流媒体传输协议。它将一整个音视频流切割成一个个小的音视频文件，并生成一个播放列表（m3u8）。客户端只需要获取资源的播放列表即可以流的方式播放音视频。
 
 HLS播放方式必须使用友好风格的URL，如下所示：
 
