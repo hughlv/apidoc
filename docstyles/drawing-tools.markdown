@@ -75,7 +75,7 @@
 
 以下是建议的时序图风格示例：
 
-> TODO: 时序图示例。
+![时序图示例](images/drawing-tools-sequence-diagram.png "时序图示例")
 
 ### UI原型图
 
@@ -109,7 +109,8 @@
 
 比较适合绘制的示意图类型为：时序图、类图、用例图等各种UML图形。
 
-产品官网：<http://www.argouml.org>。
+产品官网：<http://argouml.tigris.org/>。
+在线UML：<https://www.websequencediagrams.com>。
 
 ### Axure RP Pro
 
@@ -123,6 +124,8 @@
 
 产品官网：<http://www.xmind.net>。
 
-### Graphiz
+### Graphviz
 
 用脚本的方式编写图形。适合于一些比较极端的场景，比如经常需要使用diff两个图形的时候。
+
+产品官网：<http://graphviz.org/>。
